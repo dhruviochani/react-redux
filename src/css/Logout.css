@@ -1,0 +1,24 @@
+.item-dropdown:hover{
+    background-color: #3A5998 !important;
+    color: white !important;
+    border-radius: 5px;
+}
+
+.item-dropdown{
+    /* height: 44.891px !important;
+    padding: 4px !important;
+    border: 1px solid black; */
+    border-radius: 50%;
+    background-image: url(http://182.70.249.68:9001/static/media/profile.5faf09a….png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 38px;
+    height: 40px;
+}
+
+.menu-dropdown{
+    padding: 0 !important;
+    height: 44.891px !important;
+    text-align: center !important;
+}
+

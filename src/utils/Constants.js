@@ -1,0 +1,1 @@
+export const LOGIN_URL = 'http://182.70.249.68:9001/login';
