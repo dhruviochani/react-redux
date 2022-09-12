@@ -19,7 +19,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className='text-center my-5'>
-        <h1>Login Page</h1>
+        <h1 className='header'>Admin Login</h1>
         <Formik
           initialValues={{ email: '', password: '' }}
           validationSchema={
@@ -38,11 +38,11 @@ class Login extends React.Component {
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(async () => {
               setSubmitting(false);
-              History.push('/needy')
               const token = await fetchData(values);
               this.props.LOGIN_DISPATCH()             
               localStorage.setItem('token', token);
               console.log(values)
+              History.push('/needy')
             }, 400);
           }}
         >
@@ -77,6 +77,7 @@ class Login extends React.Component {
             </Form>
           </div>
         </Formik>
+        <div className='bg-curve'/>
         {/* <Btn text='Login' handleClick={this.handleLogin}/> */}
       </div>
     )

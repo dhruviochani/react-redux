@@ -16,18 +16,13 @@ class App extends React.Component {
   render() {
     const { lang, loading } = this.props;
     return (
-      <IntlProvider locale={lang} messages={messages[lang]}>
-        <div
-          className={lang === "ar" ? "rtl" : "ltr"}
-          dir={lang === "ar" ? "rtl" : "ltr"}
-        >
+        <div>
           {loading ? <Loader /> : null}
           <Router history={history}>
             <MaterialSnackbar />
             {<Routes lang={lang} />}
           </Router>
         </div>
-      </IntlProvider>
     );
   }
 }
