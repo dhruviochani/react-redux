@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/comp2/Navbar";
 import { Router } from "react-router-dom";
 import history from "../routes/History";
 import Routes from "../routes/Routes";
@@ -8,7 +7,6 @@ import messages from "../assets/Local/messages";
 import { MaterialSnackbar } from "../components/Snackbar/Snackbar";
 import Loader from "../components/Loader/Loader";
 import "./App.scss";
-import "./App.css";
 import { connect } from "react-redux";
 import { setCurrentLang } from "../store/Lang/LangAction";
 
@@ -26,7 +24,6 @@ class App extends React.Component {
           {loading ? <Loader /> : null}
           <Router history={history}>
             <MaterialSnackbar />
-            <Navbar />
             {<Routes lang={lang} />}
           </Router>
         </div>
@@ -35,9 +32,11 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ lang, loading }) => ({
+const mapStateToProps = ({ lang, loading, login, needy }) => ({
   lang,
   loading,
+  login,
+  needy
 });
 
 export default connect(mapStateToProps, { setCurrentLang })(App);

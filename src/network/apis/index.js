@@ -10,7 +10,10 @@ export const axiosInstance = axios.create({
   }
 });
 
+export const fetchData = (values) => axios.post(LOGIN_URL, values).then((res)=> res.data.password)
+
 // Handle request process
+
 axiosInstance.interceptors.request.use(request => requestHandler(request));
 // Handle response process
 axiosInstance.interceptors.response.use(

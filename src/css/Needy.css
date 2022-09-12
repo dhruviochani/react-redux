@@ -1,11 +1,13 @@
 .needyForm{
  margin: auto;
+ padding: 40px;
  /* text-align: center; */
     
 }
 
 .btn-needy{
     padding: 15px 30px !important;
+    background-color: #3A5998;
 
 }
 

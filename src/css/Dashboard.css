@@ -33,9 +33,11 @@ td {
 }
 
 .toptitle {
-    color: #3a5998;
-    opacity: 0.1;
-    font-size: 7rem;
+    position: sticky;
+    color: #E7EBF5;
+    top: 60px;
+    z-index: -1;
+    font-size: 100px;
     font-weight: 700;
 }
 
@@ -56,7 +58,6 @@ td {
     display: block;
     padding: 16px;
     text-decoration: none;
-    cursor: pointer;
 }
 
 .sidebarHead {
@@ -159,21 +160,48 @@ td{
     width: 25px;
 }
 
+.navbarCollapse{
+    background-color: #3A5998;
+    padding: 0px !important;
+}
+
+.container{
+    padding: 0px !important;
+}
+
+.navbar-toggler{
+    position: absolute;
+    right: 0px;
+}
+
+.navLinks{
+    background-color: #3A5998 !important;
+    width: 100% !important;
+    color: white !important;
+    text-align: left;
+    padding-left: 10px !important;
+}
 @media screen and (min-width:993px) {
     .navbarCollapse{
         display: none !important;
     }
+
 }
 
 @media screen and (max-width:992px) {
     .table{
-        max-width: 672px !important;
+        max-width: 876px !important;
         margin: auto !important;
+        overflow-x: scroll !important;
 
     }
 
+    .toptitle{
+        top: 150px;
+    }
+
     .navLogout{
-        display: none !important;
+        /* display: none !important; */
     }
 
     .footer{
@@ -189,6 +217,7 @@ td{
     .tabHead{
         width: 100% !important;
     }
+
 
     
 

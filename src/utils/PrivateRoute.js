@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 import Auth from "../utils/Auth";
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
+const PrivateRoute = ({ component: Needy, ...rest }) => {
   const {
     lang,
   } = useSelector((state) => state);
@@ -15,7 +15,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={props =>
-        Auth.isAuth() ? <Component {...props} /> : <Redirect to={`/${lang}/login`} />
+        Auth.isAuth() ? <Needy {...props} /> : <Redirect to={`/`} />
       }
     />
   );

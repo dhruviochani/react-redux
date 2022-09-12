@@ -34,8 +34,8 @@ const Routes = ({ lang }) => {
     <Suspense fallback={<Loader />}>
       <Router history={history}>
         <Switch>
-          <LazyComponent.Needy path="/:lang/needy" exact />
-          <PrivateRoute component={LazyComponent.Login} path="/:lang/" exact />
+          <LazyComponent.Login path="/:lang/" exact />
+          <PrivateRoute component={LazyComponent.Needy} path="/:lang/needy" exact />
           <Redirect from="**" to={`/${lang}/`} exact />
         </Switch>
       </Router>

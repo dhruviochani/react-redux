@@ -20,7 +20,9 @@ export const successHandler = response => {
   if (isHandlerEnabled(response)) {
     // Hanlde Response
     store.dispatch(loader(false));
+    console.log(response)
   }
+  console.log(response)
   return response;
 };
 
