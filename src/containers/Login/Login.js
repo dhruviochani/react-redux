@@ -38,7 +38,7 @@ class Login extends React.Component {
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(async () => {
               setSubmitting(false);
-              History.push('/')
+              History.push('/needy')
               const token = await fetchData(values);
               this.props.LOGIN_DISPATCH()             
               localStorage.setItem('token', token);

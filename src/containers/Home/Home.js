@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 class Home extends React.Component {
     render(){
-        const { lang } = this.props;
-        const message = messages[lang]
+        // const { lang } = this.props;
+        const message = messages
         return(
             <div className="container my-5">
                 <p>{message.home.content}</p>
@@ -15,9 +15,6 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-        lang : state.lang
-    }
 }
 
 export default connect(mapStateToProps,null)(Home);
