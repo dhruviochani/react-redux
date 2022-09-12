@@ -3,9 +3,10 @@ import * as Yup from 'yup';
 import AddField from '../../components/SmallComponent/AddField';
 import RemoveField from '../../components/SmallComponent/RemoveField';
 import '../../css/Needy.css'
-
+import Auth from '../../utils/Auth';
 import React, { Component } from 'react'
 import { connect } from 'react-redux' 
+import { SingleBedOutlined } from '@material-ui/icons';
 
 class Needy extends Component {
   render() {
@@ -37,6 +38,16 @@ class Needy extends Component {
               setSubmitting(false);
             }, 400)
           }}
+          // onSubmit={(values, { setSubmitting }) => {
+          //   setTimeout(async () => {
+          //     setSubmitting(false);
+          //     History.push('/')
+          //     const token = await fetchData(values);
+          //     this.props.LOGIN_DISPATCH()             
+          //     localStorage.setItem('token', token);
+          //     console.log(values)
+          //   }, 400)
+          // }}
         >
           <div className='needyForm mt-5'>
             <div className='header d-flex justify-content-center'>Needy form</div>
@@ -155,6 +166,9 @@ class Needy extends Component {
               <div className='d-flex justify-content-center'>
                 <button className='btn btn-needy text-light mt-3 mx-auto' id='submit' type='submit'>Submit</button>
               </div>
+              <div className='d-flex justify-content-center'>
+                <button className='btn btn-needy text-light mt-3 mx-auto' id='submit' type='submit' onClick={()=> Auth.signOut()}>LOG OUT</button>
+              </div>
             </Form>
           </div>
         </Formik>
@@ -168,8 +182,7 @@ const mapStateToProps = (state) => {
   return {
       // lang : state.lang,
       // login : state.login,
-      needy : state.needy
-      
+      needy : state.needy   
   }
 }
 
