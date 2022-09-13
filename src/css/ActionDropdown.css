@@ -12,7 +12,8 @@
     background-color: #3A5998 !important;
 }
 .itemDropdown:hover{
-    color: blue !important;
+    color:  #3a5998 !important;
+    background-color: white !important;
 }
 
 #dropdown-basic{

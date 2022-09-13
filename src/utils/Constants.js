@@ -1,4 +1,4 @@
-export const LOGIN_URL = 'https://jsonplaceholder.typicode.com/users';
-export const DASH_URL='https://jsonplaceholder.typicode.com/users';
-// export const LOGIN_URL = 'http://182.70.249.68:9001/login';
-// export const DASH_URL='http://182.70.249.68:9001/dashboard';
+
+export const LOGIN_URL = 'http://182.70.249.68:9000/v1/user/login';
+export const DASH_URL='http://182.70.249.68:9000/v1/needy/getAllNewRequests?page=';
+export const RES_URL='http://182.70.249.68:9000/v1/resource/getAllNewRequests?page=';

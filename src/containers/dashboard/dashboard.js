@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../css/Dashboard.css';
 import '../../css/Needy.css';
 import _ from 'lodash';
+import ActionDropdown from '../../components/comp2/ActionDropdown';
 // import { isDisabled } from '@testing-library/user-event/dist/utils';
 import Auth from '../../utils/Auth';
 import { fetchdata } from '../../network/apis';
@@ -11,6 +12,8 @@ import { connect } from 'react-redux' ;
 import { Component } from 'react';
 
 const Dashboard=()=>{ 
+  const class1="badge rounded-pill bg-danger p-2";
+  const class2="badge rounded-pill bg-success p-2"
     const [myData, setMyData] = useState([]);
     const [paginatedData, setPaginatedData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1)
@@ -69,8 +72,8 @@ const Dashboard=()=>{
       <ul className="sidebar">
         <h1 className='sidebarHead'>Support</h1>
         <hr className='headline' />
-        <li className='sideOption'>Needy</li>
-        <li className='sideOption'>Resources</li>
+        <li className='sideOption'><a href="/dashboard">Needy</a></li>
+        <li className='sideOption'><a href="/resources">Resources</a></li>
         <li className='sideOption'>Allotment Form</li>
         <li className='sideOption' href="#news">Allotment Data</li>
         <li className='sideOption' href="#contact">Check Due</li>
@@ -82,8 +85,9 @@ const Dashboard=()=>{
             <th scope="col" >Name</th>
             <th scope="col">Email</th>
             <th scope="col">Country</th>
-            <th scope="col">Slogan</th>
+            <th scope="col">Technology</th>
             <th scope="col">Timing</th>
+            <th scope="col">Status</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -91,14 +95,14 @@ const Dashboard=()=>{
 
           {paginatedData.map((item, i) => (
             <tr className='rows' key={i}>
-              <td>{item.name}.</td>
-              <td>{item.website}</td>
-              <td>{item.email}</td>
-              <td>{item.username}</td>
-              <td>{item.id}</td>
-              {/* <td><div>{item.technology.map((lang, j) => { return <span key={Math.random*10}>{lang.language}, </span> })}</div></td>
-              <td><div>{item.timing.map((time, k) => { return <span key={Math.random*100}>{time.startTime} to {time.endTime}<br /></span> })}</div></td> */}
-            </tr>
+            <td style={{fontWeight:"600", fontsize: "13px"}}>{item.name}.</td>
+            <td>{item.email}</td>
+            <td>{item.country}</td>
+            <td><div>{item.technology.map((lang, j) => { return <span key={Math.random*10}>{lang.language}, </span> })}</div></td>
+            <td><div>{item.timing.map((time, k) => { return <span key={Math.random*100}>{time.startTime} to {time.endTime}<br /></span> })}</div></td>
+            <td><span className={item.status=="AVAILABLE"?class1:class2}>{item.status}</span></td>
+            <td><ActionDropdown/></td>
+          </tr>
           ))}
 
         </tbody>
