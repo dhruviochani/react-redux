@@ -13,13 +13,13 @@ export const axiosInstance = axios.create({
 export const axiosinstance = axios.create({
   baseURL: DASH_URL,
   headers: {
-    // 'Authorization': `Bearer ${localStorage.token}`,
+    'Authorization': `Bearer ${localStorage.token}`,
     'Content-type': 'application/json'
   }
 })
 
-export const fetchData = (values) => axios.post(LOGIN_URL, values).then((res)=> res.data.password) //change this
-export const fetchdata=() => axios.get(DASH_URL).then((res)=>res.data)
+export const fetchData = (values) => axios.post(LOGIN_URL, values).then((res)=> res.data.data.token) //change this
+export const fetchdata=() => axios.get(DASH_URL).then((res)=>res.data.data.results)
 // Handle request process
 
 axiosInstance.interceptors.request.use(request => requestHandler(request));

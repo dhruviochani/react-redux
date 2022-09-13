@@ -1,5 +1,5 @@
 import Dropdown from 'react-bootstrap/Dropdown';
-import '../Pages/CSS/ActionDropdown.css'
+import '../../css/ActionDropdown.css'
 import Switch from './Switch';
 
 const ActionDropdown = () => {

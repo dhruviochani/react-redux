@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../css/Dashboard.css';
 import '../../css/Needy.css';
 import _ from 'lodash';
+// import ActionDropdown from '../../components/comp2/ActionDropdown';
 // import { isDisabled } from '@testing-library/user-event/dist/utils';
 import Auth from '../../utils/Auth';
 import { fetchdata } from '../../network/apis';
@@ -91,14 +92,13 @@ const Dashboard=()=>{
 
           {paginatedData.map((item, i) => (
             <tr className='rows' key={i}>
-              <td>{item.name}.</td>
-              <td>{item.website}</td>
-              <td>{item.email}</td>
-              <td>{item.username}</td>
-              <td>{item.id}</td>
-              {/* <td><div>{item.technology.map((lang, j) => { return <span key={Math.random*10}>{lang.language}, </span> })}</div></td>
-              <td><div>{item.timing.map((time, k) => { return <span key={Math.random*100}>{time.startTime} to {time.endTime}<br /></span> })}</div></td> */}
-            </tr>
+            <td>{item.name}.</td>
+            <td>{item.email}</td>
+            <td>{item.country}</td>
+            <td><div>{item.technology.map((lang, j) => { return <span key={Math.random*10}>{lang.language}, </span> })}</div></td>
+            <td><div>{item.timing.map((time, k) => { return <span key={Math.random*100}>{time.startTime} to {time.endTime}<br /></span> })}</div></td>
+            {/* <td><ActionDropdown/></td> */}
+          </tr>
           ))}
 
         </tbody>
