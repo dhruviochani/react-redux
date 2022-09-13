@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
+import Dashboard from "../containers/dashboard/dashboard";
 import Auth from "../utils/Auth";
 
-const PrivateRoute = ({component:Needy, ...res}) => {
+const PrivateRoute = ({component:Comp, ...res}) => {
   
   console.log(Auth.isAuth())
   if (!Auth.isAuth()) {
@@ -13,7 +14,7 @@ const PrivateRoute = ({component:Needy, ...res}) => {
   return (
   <Route
   {...res}
-  render={props =><Needy {...props} />
+  render={props =><Comp {...props} />
   }/>
   )
 };

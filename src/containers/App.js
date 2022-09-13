@@ -14,24 +14,24 @@ class App extends React.Component {
   // App contains routes and also wrapped with snackbar and intl for localization
 
   render() {
-    const { lang, loading } = this.props;
+    const {loading } = this.props;
     return (
         <div>
           {loading ? <Loader /> : null}
           <Router history={history}>
             <MaterialSnackbar />
-            {<Routes lang={lang} />}
+            {<Routes/>}
           </Router>
         </div>
     );
   }
 }
 
-const mapStateToProps = ({ lang, loading, login, needy }) => ({
-  lang,
+const mapStateToProps = ({ loading, login, needy, dashboard }) => ({
   loading,
   login,
-  needy
+  needy,
+  dashboard
 });
 
 export default connect(mapStateToProps, { setCurrentLang })(App);

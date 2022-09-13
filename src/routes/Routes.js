@@ -24,6 +24,7 @@ const Routes = () => {
         <Switch>
           <LazyComponent.Login path="/" exact />
           <PrivateRoute component={LazyComponent.Needy} path="/needy" exact />
+          <PrivateRoute component={LazyComponent.Dashboard} path="/dashboard" exact />
           <Redirect from="**" to={`/`} exact />
         </Switch>
       </Router>
