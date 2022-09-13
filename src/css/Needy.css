@@ -8,6 +8,9 @@
 .btn-needy{
     padding: 15px 30px !important;
     background-color: #3A5998;
+    margin: 10px;
+    border-style: none;
+    border-radius: 5px;
 
 }
 
@@ -44,4 +47,13 @@
     height: 4rem;
     position: relative;
     top: 200px;
+}
+
+.header{
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 58px;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
 }
