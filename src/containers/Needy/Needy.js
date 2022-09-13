@@ -50,7 +50,7 @@ class Needy extends Component {
           // }}
         >
           <div className='needyForm mt-5'>
-            <div className='header d-flex justify-content-center'>Needy form</div>
+            <div className='header d flex'>Needy form</div>
             <Form>
               <div className='row'>
                 <div className='form-group col-md-6 mb-2 mb-sm-3 mb-lg-4 col-sm-12 col-12'>
@@ -164,10 +164,10 @@ class Needy extends Component {
                 <div className='my-4'>WE WILL CONNECT YOU ON:</div>
               </div>
               <div className='d-flex justify-content-center'>
-                <button className='btn btn-needy text-light mt-3 mx-auto' id='submit' type='submit'>Submit</button>
+                <button className='btn-needy text-light' id='submit' type='submit'>Submit</button>
               </div>
               <div className='d-flex justify-content-center'>
-                <button className='btn btn-needy text-light mt-3 mx-auto' id='submit' type='submit' onClick={()=> Auth.signOut()}>LOG OUT</button>
+                <button className='btn-needy  text-light' id='submit' type='submit' onClick={()=> Auth.signOut()}>LOG OUT</button>
               </div>
             </Form>
           </div>
