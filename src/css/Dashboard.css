@@ -226,4 +226,20 @@ td{
         flex-direction: column;
     }
 }
-
+a{
+    text-decoration: none !important;
+    color:white !important;
+}
+.rounded-pill {
+    border-radius: 50rem !important;
+}
+.bg-danger {
+    background-color: rgb(220, 53, 69) !important;
+}
+.bg-success{
+    --bs-bg-opacity:1;
+    background-color: rgba( 25, 135, 84)!important;
+}
+.p-2 {
+    padding: 0.5rem !important;
+}
