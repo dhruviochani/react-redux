@@ -95,7 +95,7 @@ const Resources=()=>{
 
         {paginatedData.map((item, i) => (
             <tr className='rows' key={i}>
-              <td>{item.name}.</td>
+              <td style={{fontWeight:"600", fontsize: "13px"}}>{item.name}.</td>
               <td>{item.email}</td>
               <td>{item.country}</td>
               <td><div>{item.technology.map((lang, j) => { return <span key={Math.random*10}>{lang.language}, </span> })}</div></td>

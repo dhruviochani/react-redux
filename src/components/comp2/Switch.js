@@ -1,5 +1,5 @@
 import React from "react";
-import "../Pages/CSS/Switch.css";
+import "../../css/Switch.css";
 import cx from "classnames"
 
 const Switch = () => {
