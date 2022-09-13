@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../css/Dashboard.css';
+import '../../css/Needy.css';
 import _ from 'lodash';
 // import { isDisabled } from '@testing-library/user-event/dist/utils';
 import Auth from '../../utils/Auth';
@@ -60,6 +61,7 @@ const Dashboard=()=>{
     return(
         // <div>"Hello"</div>
         <div className='dashboard'>
+            <button className='btn btn-needy text-light mt-3 mx-auto' style={{backgroundColor:"#3A5998", color:"white", position:"absolute", margin:"auto", right:"10px", padding:"0.5px", border:"none"}} onClick={()=> Auth.signOut()}>LOG OUT</button>
             <h1 className='dashboardHead toptitle mb-lg-3'>Needy</h1>
             <div className='d-flex justify-content-center'>
                 <button className='btn btn-needy text-light mt-3 mx-auto' id='submit' type='submit' onClick={()=> Auth.signOut()}>LOG OUT</button>
